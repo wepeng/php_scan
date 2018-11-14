@@ -1,0 +1,26 @@
+﻿
+	<table border="1" class="itable">
+		<caption>文件列表</caption>
+		<tr>
+		<th>文件路径</th>
+		<th>操作</th>
+		<th>添加函数</th>
+		<th>添加函数路径</th>
+		<th>删除</th>
+		</tr>
+		<?php
+			$sql = "SELECT * FROM  `files` where `edit`=0";
+			$result = mysql_query($sql);
+			while($value = mysql_fetch_assoc($result))
+			{
+				echo "<tr>
+					<td>".$value['file']."</td>
+					<td><a href='$url_this&files_id=".$value['id']."'>操作</a></td>
+					<td><a href='$url_this&in_action=add_function&files_id=".$value['id']."'>添加函数</a></td>
+					<td><a href='$url_this&in_action=add_function_path&files_id=".$value['id']."'>添加函数路径</a></td>
+					<td><a href='$url_this&in_action=del&files_id=".$value['id']."'>删除</a></td>
+					</tr>";
+			}
+			
+		?>
+	</table>

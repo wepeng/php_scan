@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>...</title>
+<script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
+<script type="text/javascript" src="js/jquery_corner.js"></script>
+<script type="text/javascript" src="js/Calendar.js"></script>
+<link rel="stylesheet" type="text/css" href="css/common.css" />
+</head>
+<script language="javascript">
+  var cdr = new Calendar("cdr");
+  document.write(cdr);
+  cdr.showMoreDay = true;
+  
+  /*圆角div*/
+  $('.corner').corner('7px');
+  
+  function trim(str){ //删除左右两端的空格
+   return str.replace(/(^\s*)|(\s*$)/g, "");
+  }
+  
+  /*table样式*/
+  $(document).ready(function(){
+	  $('.itable tbody tr:odd').addClass('iodd');
+	  $('.itable tbody tr:even').addClass('ieven');
+  })
+</script>
+
+<script language="JavaScript">
+/*PNG透明*/ 
+function correctPNG()
+{
+for(var i=0; i<document.images.length; i++)
+{
+var img = document.images[i]
+var imgName = img.src.toUpperCase()
+if (imgName.substring(imgName.length-3, imgName.length) == "PNG")
+{
+var imgID = (img.id) ? "id='" + img.id + "' " : ""
+var imgClass = (img.className) ? "class='" + img.className + "' " : ""
+var imgTitle = (img.title) ? "title='" + img.title + "' " : "title='" + img.alt + "' "
+var imgStyle = "display:inline-block;" + img.style.cssText
+if (img.align == "left") imgStyle = "float:left;" + imgStyle
+if (img.align == "right") imgStyle = "float:right;" + imgStyle
+if (img.parentElement.href) imgStyle = "cursor:hand;" + imgStyle
+var strNewHTML = "<span "+ imgID + imgClass + imgTitle + " style=\"" + "width:" + img.width + "px; height:" + img.height + "px;" + imgStyle + ";" + "filter:progid:DXImageTransform.Microsoft.AlphaImageLoader" + "(src='" + img.src + "', sizingMethod='scale');\"></span>"
+img.outerHTML = strNewHTML
+i = i-1
+}
+}
+}
+window.attachEvent("onload", correctPNG);
+</script>
+<body>
+<div id="top">
+	<div id="menubar">
+	<ul>
+		<li id="signup"><a href="index.php">首页</a></li>
+		<li id="rebulid_index"><a href="index.php?action=up_file">上传文件</a></li>
+		<li id="up_examresult"><a href="index.php?action=information">源代码基础信息完善</a></li>
+		<li id="up_student_class"><a href="index.php?action=cal_path">计算路径</a></li>
+		<li id="rebuild_class"><a href="index.php?action=show_path">显示路径</a></li>
+		<li id="rebuild_class"><a href="index.php?action=role_manager">角色管理</a></li>
+		<li id="rebuild_class"><a href="index.php?action=db_manager">数据库管理</a></li>
+		<!--<li id="rebuild_class"><a href="index.php?action=unauthorized_role">越权漏洞判断</a></li>-->
+	</ul>
+	</div>
+</div>
+<div style="clear:both;"></div>	
+<?php 
+/*当前页面添加菜单背景*/
+if(isset($_GET['action'])){
+	echo '<script language="javascript">$("#'.$_GET['action'].'").addClass("nowpage");</script>';
+}
+?>
+<div>
+<div id="content" class="">

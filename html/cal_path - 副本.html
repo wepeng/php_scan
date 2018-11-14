@@ -1,0 +1,60 @@
+﻿<?php
+	//取出所有的起点
+	$sql = "SELECT * FROM `points` WHERE `position`='1'";
+	$result = mysql_query($sql);
+	
+	//深度优先遍历
+	while($res = mysql_fetch_assoc($result))
+	{
+		//print_r($res);
+		//判断点是否调用函数
+		//获取调用函数的所有路径，遍历，如果路径有结束点直接插入路径，其余加入函数路径中
+		$path = Array($res['id']);
+		$path_all = Array($res['id']);
+		$lines_id = Array();
+		$lines_id_all = Array();
+		if(!empty($res['functions_line']))
+		{
+			deal_function($path, $path_all, $lines_id, $lines_id_all, $res['functions_line'], $res['level'], $res['id']);
+			/*
+			$functions_line = unserialize($res['functions_line']);
+			foreach($functions_line as $value)
+			{
+				$sql = "select * from `functions` where `id`='$value'";
+				$result_line = mysql_query($sql);
+				$res_line = mysql_fetch_assoc($result_line);
+				$paths = unserialize($res_line['paths']);
+				if(!empty($paths))
+				{
+					foreach($paths as $value)
+					{
+						$path_all = array_merge($path_all, $value['path']);
+						$sum = count($value['path']);
+						for($i=0; $i<=$sum; $i++)
+						{
+							$lines_id_all[] = -1;
+						}
+						if($value['end'])
+						{
+							insert_path($path_all, $lines_id_all);
+						} else {
+							if($res['level']==1)
+							{
+								dep($path, $path_all, $lines_id, $lines_id_all, $res['id'], 1);
+							} else {
+								dep($path, $path_all, $lines_id, $lines_id_all, $res['id'], 0);
+							} //else if
+						}//else if
+					} //foreach
+				} //if
+				//还原路径
+				
+			} //foreach
+			*/
+		} else {
+			dep($path, $path_all, $lines_id, $lines_id_all, $res['id'], $res['level']);
+		}// else if
+	} //while
+	second_insert();
+	echo  "计算完毕！";
+?>

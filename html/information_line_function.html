@@ -1,0 +1,35 @@
+﻿<?php
+	 
+	if(isset($_POST['function_id']) && isset($_GET['points_id']))
+	{
+		//列出函数，选择经过的行
+		$function_id = $_POST['function_id'];
+		$point_id = $_GET['points_id'];
+		$sql = "select * from `points` where `id`='$point_id'";
+		$result = mysql_query($sql);
+		$res = mysql_fetch_assoc($result);
+		$functions_line = unserialize($res['functions_line']);
+		$functions_line[] = $function_id;
+		$functions_line = array_unique($functions_line);
+		$functions_line = addslashes(serialize($functions_line));
+		$sql = "update `points` set `functions_line`='$functions_line' where `id`='$point_id'";
+		mysql_query($sql);
+		header("Location:".$_SERVER['HTTP_REFERER']);
+	} else {
+		get_files_functions();
+		//列出文件和对应的函数，选择
+		include "./html/files_functions.html";
+		//列出当前调用的函数
+		echo '当前所调用的函数：';
+		$point_id = $_GET['points_id'];
+		$sql = "select * from `points` where `id`='$point_id'";
+		$result = mysql_query($sql);
+		$res = mysql_fetch_assoc($result);
+		$functions_line = unserialize($res['functions_line']);
+		print_r($functions_line);
+		$refer = $_SERVER['HTTP_REFERER'];
+		echo "<a href='$refer'>返回文件</a>";
+	}
+	//返回
+	
+?>

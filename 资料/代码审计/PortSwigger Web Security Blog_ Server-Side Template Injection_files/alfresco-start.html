@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/terms/"
+  xmlns:foaf="http://xmlns.com/foaf/0.1/"
+  xmlns:og="http://ogp.me/ns#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:sioc="http://rdfs.org/sioc/ns#"
+  xmlns:sioct="http://rdfs.org/sioc/types#"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+<head profile="http://www.w3.org/1999/xhtml/vocab">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="up" href="http://docs.alfresco.com/5.0/concepts/start-stop-intro.html" />
+<link rel="next" href="http://docs.alfresco.com/5.0/tasks/alfresco-stop.html" />
+<link rel="shortcut icon" href="http://wac.996C.edgecastcdn.net/80996C/docsalfrescocom/sites/docs.alfresco.com/themes/custom/alfrescodocs_bootstrap/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="prev" href="http://docs.alfresco.com/5.0/concepts/start-stop-intro.html" />
+<link rel="shortlink" href="http://docs.alfresco.com/5.0/tasks/alfresco-start.html" />
+<meta http-equiv="x-dns-prefetch-control" content="on" />
+<link rel="dns-prefetch" href="//wac.996C.edgecastcdn.net" />
+<link rel="canonical" href="http://docs.alfresco.com/5.0/tasks/alfresco-start.html" />
+  <title>Starting the Alfresco server | Alfresco Documentation</title>
+  <link type="text/css" rel="stylesheet" href="http://wac.996C.edgecastcdn.net/80996C/docsalfrescocom/sites/docs.alfresco.com/files/public/cdn/css/http/css_0QGVTps_vCEsgdCbKf1xEvNMpatwSWAygrY0l2adh-Q.css" media="all" />
+<link type="text/css" rel="stylesheet" href="http://wac.996C.edgecastcdn.net/80996C/docsalfrescocom/sites/docs.alfresco.com/files/public/cdn/css/http/css_557opjfhD9sP5UCPGKXEBZyjS8mr2CeSDBAuaQIlIDs.css" media="all" />
+<link type="text/css" rel="stylesheet" href="http://wac.996C.edgecastcdn.net/80996C/docsalfrescocom/sites/docs.alfresco.com/files/public/cdn/css/http/css_b5owFlCYUCBWDmgF1wSsXfknRkucTO9BZvAll1WtS6g.css" media="all" />
+<link type="text/css" rel="stylesheet" href="http://wac.996C.edgecastcdn.net/80996C/docsalfrescocom/sites/docs.alfresco.com/files/public/cdn/css/http/css_P7avxjqN-susbwIkdd2YIQFlkft18vFs8nbrePBuqTs.css" media="all" />
+<link type="text/css" rel="stylesheet" href="http://wac.996C.edgecastcdn.net/80996C/docsalfrescocom/sites/docs.alfresco.com/files/public/cdn/css/http/css_tI3ZzFId-gvzeR34pNnrKLInsT2zTaKFzWky3wrcm08.css" media="only screen and (min-width: 992px)" />
+<link type="text/css" rel="stylesheet" href="http://wac.996C.edgecastcdn.net/80996C/docsalfrescocom/sites/docs.alfresco.com/files/public/cdn/css/http/css_Xr-8xIHh-1Wqhk7AHvbgzjn3tERffXSbsgx5UHmzc4I.css" media="only screen and (max-width: 768px)" />
+<link type="text/css" rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,600" media="all" />
+  <!-- HTML5 element support for IE6-8 -->
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-W4HV22" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <script src="http://wac.996C.edgecastcdn.net/80996C/docsalfrescocom/sites/docs.alfresco.com/modules/contrib/jquery_update/replace/jquery/1.7/jquery.min.js?v=1.7.1"></script>
+<script src="http://wac.996C.edgecastcdn.net/80996C/docsalfrescocom/misc/jquery.once.js?v=1.2"></script>
+<script src="http://wac.996C.edgecastcdn.net/80996C/docsalfrescocom/misc/drupal.js?nq6kuf"></script>
+<script src="http://wac.996C.edgecastcdn.net/80996C/docsalfrescocom/sites/all/libraries/fitvids/jquery.fitvids.js?nq6kuf"></script>
+<script src="http://wac.996C.edgecastcdn.net/80996C/docsalfrescocom/sites/docs.alfresco.com/modules/contrib/fitvids/fitvids.js?nq6kuf"></script>
+<script src="//munchkin.marketo.net/munchkin.js"></script>
+<script src="http://wac.996C.edgecastcdn.net/80996C/docsalfrescocom/sites/docs.alfresco.com/themes/custom/alfrescodocs_bootstrap/js/google-analytics.js?nq6kuf"></script>
+<script src="//app-ab05.marketo.com/js/forms2/js/forms2.min.js"></script>
+<script src="http://wac.996C.edgecastcdn.net/80996C/docsalfrescocom/sites/docs.alfresco.com/themes/custom/alfrescodocs_bootstrap/js/marketo-loadForm.js?nq6kuf"></script>
+<script src="http://wac.996C.edgecastcdn.net/80996C/docsalfrescocom/sites/docs.alfresco.com/themes/custom/alfrescodocs_bootstrap/js/alfresco.js?nq6kuf"></script>
+<script src="http://wac.996C.edgecastcdn.net/80996C/docsalfrescocom/sites/docs.alfresco.com/themes/custom/alfrescodocs_bootstrap/js/wufoo1.js?nq6kuf"></script>
+<script src="http://wac.996C.edgecastcdn.net/80996C/docsalfrescocom/sites/docs.alfresco.com/themes/custom/alfrescodocs_bootstrap/js/retina-1.1.0.min.js?nq6kuf"></script>
+<script>jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"alfrescodocs_bootstrap","theme_token":"a_XImZu183yH9RjuW6ACxeRp6Capx2TF96KcKnm3iVA","js":{"sites\/docs.alfresco.com\/themes\/contrib\/bootstrap\/js\/bootstrap.js":1,"sites\/docs.alfresco.com\/modules\/contrib\/jquery_update\/replace\/jquery\/1.7\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/libraries\/fitvids\/jquery.fitvids.js":1,"sites\/docs.alfresco.com\/modules\/contrib\/fitvids\/fitvids.js":1,"\/\/munchkin.marketo.net\/munchkin.js":1,"sites\/docs.alfresco.com\/themes\/custom\/alfrescodocs_bootstrap\/js\/google-analytics.js":1,"\/\/app-ab05.marketo.com\/js\/forms2\/js\/forms2.min.js":1,"sites\/docs.alfresco.com\/themes\/custom\/alfrescodocs_bootstrap\/js\/marketo-loadForm.js":1,"sites\/docs.alfresco.com\/themes\/custom\/alfrescodocs_bootstrap\/js\/alfresco.js":1,"sites\/docs.alfresco.com\/themes\/custom\/alfrescodocs_bootstrap\/js\/wufoo1.js":1,"sites\/docs.alfresco.com\/themes\/custom\/alfrescodocs_bootstrap\/js\/retina-1.1.0.min.js":1},"css":{"modules\/system\/system.base.css":1,"sites\/docs.alfresco.com\/modules\/contrib\/ldap\/ldap_user\/ldap_user.css":1,"sites\/docs.alfresco.com\/modules\/contrib\/date\/date_api\/date.css":1,"sites\/docs.alfresco.com\/modules\/contrib\/date\/date_popup\/themes\/datepicker.1.7.css":1,"modules\/field\/theme\/field.css":1,"sites\/docs.alfresco.com\/modules\/contrib\/fitvids\/fitvids.css":1,"sites\/docs.alfresco.com\/modules\/contrib\/views\/css\/views.css":1,"sites\/docs.alfresco.com\/modules\/contrib\/ctools\/css\/ctools.css":1,"sites\/docs.alfresco.com\/modules\/contrib\/ldap\/ldap_servers\/ldap_servers.admin.css":1,"sites\/docs.alfresco.com\/themes\/custom\/alfrescodocs_bootstrap\/css\/bootstrap.min.css":1,"sites\/docs.alfresco.com\/themes\/custom\/alfrescodocs_bootstrap\/css\/style.css":1,"sites\/docs.alfresco.com\/themes\/custom\/alfrescodocs_bootstrap\/css\/typography.css":1,"sites\/docs.alfresco.com\/themes\/custom\/alfrescodocs_bootstrap\/css\/utils.css":1,"sites\/docs.alfresco.com\/themes\/custom\/alfrescodocs_bootstrap\/css\/module-header.css":1,"sites\/docs.alfresco.com\/themes\/custom\/alfrescodocs_bootstrap\/css\/marketo-form.css":1,"sites\/docs.alfresco.com\/themes\/custom\/alfrescodocs_bootstrap\/css\/992.css":1,"sites\/docs.alfresco.com\/themes\/custom\/alfrescodocs_bootstrap\/css\/768.css":1,"\/\/fonts.googleapis.com\/css?family=Open+Sans:400,600":1}},"fitvids":{"custom_domains":[],"selectors":["body \r",".section \r",".content"],"simplifymarkup":1}});</script>
+</head>
+<body class="html not-front not-logged-in one-sidebar sidebar-first page-node page-node- page-node-578041 node-type-documentation-page" >
+<div id="horizontal-scroll">
+  <div id="skip-link">
+    <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+  </div>
+    <header id="navbar" role="banner" class="navbar navbar-default">
+  <div class="container">
+    <!--<div class="no-padding-horizantal  navbar-header">-->
+    <div class="row">
+      <a class="eq-col-md-4 header-margin pull-left col-xs-8 col-sm-6 col-md-4 logo navbar-btn pull-left" href="/" title="Home">
+         <img class="img-responsive" src="/sites/docs.alfresco.com/themes/custom/alfrescodocs_bootstrap/img/logo.png" alt="Home" />
+      </a>
+      <div class="pull-right eq-col-md-4 header-xs-contact header-margin navbar-btn col-xs-4 no-left-padding visible-xs">
+         <a title="Contact Alfresco" href="https://www.alfresco.com/company/contact" class="pull-right button cta">Contact Us</a>
+      </div>
+      <div class="navbar-btn hidden-xs pull-right header-right-ui-element search-element header-element no-right-padding-xs">  
+          <div class="region region-navigation">
+    <section id="block-search-form" class="block block-search clearfix">
+
+      
+  <form class="form-search content-search form-search content-search" action="/5.0/tasks/alfresco-start.html" method="post" id="search-block-form" accept-charset="UTF-8"><div><div>
+      <h2 class="element-invisible">Search form</h2>
+    <input title="Search..." placeholder="Search..." class="form-control form-text" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" /><button class="element-invisible element-invisible btn btn-primary form-submit" id="edit-submit" name="op" value="Search" type="submit">Search</button>
+<input type="hidden" name="form_build_id" value="form-mlRHOESzjo1kO2dvFoDSCtI8QlgdqOGcg5s_Cnltv6Q" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>
+</section> <!-- /.block -->
+  </div>
+       </div><!--block-->
+             <div class="navbar-btn pull-right header-right-ui-element visible-lg">
+           <a title="Alfresco Training" href="http://university.alfresco.com/" class="button cta">Training</a> 
+       </div>           
+          </div>
+    <!--
+    <div class="visible-xs header-right navbar-btn pull-right col-md-pull-right col-xs-12 col-sm-6 col-md-6">
+    </div>
+    
+    -->
+  </div>
+  <nav class="heading main-menu visible-xs">
+    <div class="container">
+      <div class="row">
+                <div class="col-xs-4 action-mobile-nav">
+          <a href="#">Menu</a>
+        </div>
+               <!--block-->
+                  <div class="pull-right col-xs-8">
+            <div class="region region-navigation">
+      <div class="region region-navigation">
+    <section id="block-search-form" class="block block-search clearfix">
+
+      
+  <form class="form-search content-search form-search content-search" action="/5.0/tasks/alfresco-start.html" method="post" id="search-block-form" accept-charset="UTF-8"><div><div>
+      <h2 class="element-invisible">Search form</h2>
+    <input title="Search..." placeholder="Search..." class="form-control form-text" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" /><button class="element-invisible element-invisible btn btn-primary form-submit" id="edit-submit" name="op" value="Search" type="submit">Search</button>
+<input type="hidden" name="form_build_id" value="form-mlRHOESzjo1kO2dvFoDSCtI8QlgdqOGcg5s_Cnltv6Q" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>
+</section> <!-- /.block -->
+  </div>
+  </div>
+          </div>
+         
+      </div>
+    </div>
+  </nav>
+</header>
+
+<div class="main-container container">
+  <header role="banner" id="page-header">
+    
+      </header> <!-- /#header -->
+
+  <div class="row">
+          <aside style="padding:15px" class="col-sm-4 col-md-3 book-container" role="complementary">
+          <div class="region region-sidebar-first book-nav">
+    <section id="block-book-navigation" class="block block-book clearfix">
+
+      
+  <ul class="menu nav"><li class="first leaf"><a href="http://docs.alfresco.com/5.0/references/whats-new.html">What&#039;s new in Alfresco</a></li>
+<li class="collapsed"><a href="http://docs.alfresco.com/5.0/concepts/system-about.html">Alfresco One overview</a></li>
+<li class="collapsed"><a href="http://docs.alfresco.com/5.0/topics/alfresco-video-tutorials.html">Alfresco One video tutorials</a></li>
+<li class="collapsed"><a href="http://docs.alfresco.com/5.0/concepts/master-using-intro.html">Using Alfresco</a></li>
+<li class="collapsed"><a href="http://docs.alfresco.com/5.0/concepts/master-ch-install.html">Installing </a></li>
+<li class="collapsed"><a href="http://docs.alfresco.com/5.0/concepts/ch-upgrade.html">Upgrading</a></li>
+<li class="expanded active-trail dropdown-submenu"><a href="http://docs.alfresco.com/5.0/concepts/ch-administering.html" class="active-trail dropdown-toggle" data-target="#">Administering</a><ul class="dropdown-menu"><li class="first expanded active-trail dropdown-submenu"><a href="http://docs.alfresco.com/5.0/concepts/start-stop-intro.html" class="active-trail dropdown-toggle" data-target="#">Starting and stopping Alfresco</a><ul class="dropdown-menu"><li class="first leaf active-trail active"><a href="http://docs.alfresco.com/5.0/tasks/alfresco-start.html" class="active-trail active">Starting the Alfresco server</a></li>
+<li class="leaf"><a href="http://docs.alfresco.com/5.0/tasks/alfresco-stop.html">Stopping the Alfresco server</a></li>
+<li class="last leaf"><a href="http://docs.alfresco.com/5.0/tasks/start-share.html">Starting Alfresco
+ Share</a></li>
+</ul></li>
+<li class="collapsed"><a href="http://docs.alfresco.com/5.0/concepts/ch-configuration.html">Configuring Alfresco</a></li>
+<li class="collapsed"><a href="http://docs.alfresco.com/5.0/concepts/zeroday-overview.html">Alfresco Day Zero Configuration Guide</a></li>
+<li class="collapsed"><a href="http://docs.alfresco.com/5.0/concepts/auth-intro.html">Setting up Alfresco authentication and security</a></li>
+<li class="collapsed"><a href="http://docs.alfresco.com/5.0/concepts/ha-intro.html">Setting up clustering</a></li>
+<li class="collapsed"><a href="http://docs.alfresco.com/5.0/concepts/solr-home.html">Configuring search</a></li>
+<li class="collapsed"><a href="http://docs.alfresco.com/5.0/concepts/cloud-sync-intro.html">Setting up Enterprise to Cloud Sync</a></li>
+<li class="collapsed"><a href="http://docs.alfresco.com/5.0/concepts/managing-transformations.html">Managing transformations</a></li>
+<li class="collapsed"><a href="http://docs.alfresco.com/5.0/topics/wf-howto.html">Creating and managing workflows</a></li>
+<li class="collapsed"><a href="http://docs.alfresco.com/5.0/concepts/ch-backup-restore.html">Backing up and restoring</a></li>
+<li class="collapsed"><a href="http://docs.alfresco.com/5.0/concepts/migrating.html">Migrating</a></li>
+<li class="collapsed"><a href="http://docs.alfresco.com/5.0/concepts/Bulk-Import-Tool.html">Using the Bulk Import tool</a></li>
+<li class="collapsed"><a href="http://docs.alfresco.com/5.0/concepts/manage-cs-home.html">Using content stores</a></li>
+<li class="collapsed"><a href="http://docs.alfresco.com/5.0/concepts/templated-nodes-intro.html">Configuring templated nodes and space templates</a></li>
+<li class="collapsed"><a href="http://docs.alfresco.com/5.0/concepts/mt-intro.html">Setting up Alfresco multi-tenancy</a></li>
+<li class="collapsed"><a href="http://docs.alfresco.com/5.0/concepts/admintools-replication-config.html">Setting up content replication</a></li>
+<li class="collapsed"><a href="http://docs.alfresco.com/5.0/concepts/FSTR-intro.html">Configuring the File System Transfer Receiver</a></li>
+<li class="collapsed"><a href="http://docs.alfresco.com/5.0/concepts/monitoring-intro.html">Monitoring Alfresco</a></li>
+<li class="last collapsed"><a href="http://docs.alfresco.com/5.0/concepts/audit-intro.html">Auditing Alfresco</a></li>
+</ul></li>
+<li class="collapsed"><a href="http://docs.alfresco.com/5.0/concepts/dev-for-developers.html">Developing</a></li>
+<li class="collapsed"><a href="http://docs.alfresco.com/5.0/concepts/ch-troubleshoot.html">Troubleshooting</a></li>
+<li class="collapsed"><a href="http://docs.alfresco.com/5.0/concepts/ch-reference.html">Reference</a></li>
+<li class="leaf"><a href="http://docs.alfresco.com/5.0/reuse/copyright.html">Copyright</a></li>
+<li class="last leaf"><a href="http://docs.alfresco.com/5.0/reuse/disclaimer.html">Disclaimer</a></li>
+</ul>
+</section> <!-- /.block -->
+  </div>
+      </aside>  <!-- /#sidebar-first -->
+    
+    <section class="col-sm-8 col-md-9 book-content" style="padding:20px">
+            <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="http://docs.alfresco.com/5.0/concepts/welcome.html">Alfresco One 5.0.1</a> » <a href="http://docs.alfresco.com/5.0/concepts/ch-administering.html">Administering</a> » <a href="http://docs.alfresco.com/5.0/concepts/start-stop-intro.html">Starting and stopping Alfresco</a></div>      <a id="main-content"></a>
+                    <h1 class="page-header">
+          Starting the Alfresco server        </h1>
+                                            <div class="region region-content">
+    <section id="block-system-main" class="block block-system clearfix">
+
+      
+  <div id="node-578041" class="node node-documentation-page node-promoted clearfix" about="http://docs.alfresco.com/5.0/tasks/alfresco-start.html" typeof="sioc:Item foaf:Document">
+
+  
+      <span property="dc:title" content="Starting the Alfresco server" class="rdf-meta element-hidden"></span><span property="sioc:num_replies" content="0" datatype="xsd:integer" class="rdf-meta element-hidden"></span>
+  
+  <div class="content">
+    <span class="print-link"></span><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded">
+
+
+  
+
+  
+  
+  <div class="body taskbody"><p class="shortdesc">The server must be running before you can use Alfresco Share. When you install Alfresco
+    using the setup wizard, the server is automatically installed and started as a
+    service.</p>
+
+    <ul class="ul steps-unordered"><li class="li step">(Windows) 
+        <span class="ph cmd">If you installed Alfresco as a service, from the <span class="ph uicontrol">Start</span> menu,
+          select <span class="ph uicontrol">All Programs &gt; Alfresco One &gt; alfresco manager tool</span>, and
+          start the <samp class="ph codeph">Tomcat Server</samp> and <samp class="ph codeph">Postgres</samp> services.</span>
+      </li>
+<li class="li step">(Windows) 
+        <span class="ph cmd">Alternatively, from a command prompt, navigate to the Alfresco installation directory
+            <span class="ph filepath">(C:/Alfresco)</span> and run <samp class="ph codeph">servicerun START</samp>.</span>
+        <p class="info"> You need administrator rights to run this command.</p>
+        <p class="info"> These services are also available from the <span class="ph uicontrol">Start</span> menu under
+            <span class="ph uicontrol">Control Panel &gt; System and Security &gt; Administrative Tools &gt;
+            Services</span>.</p>
+      </li>
+<li class="li step">(Linux) 
+        <span class="ph cmd">If you installed Alfresco as a service, double click the <span class="keyword wintitle">Application
+            Manager</span>  tool in the Alfresco root directory and start the <samp class="ph codeph">PostgreSQL
+            Database</samp> and <samp class="ph codeph">Tomcat Server</samp> services.</span>
+      </li>
+<li class="li step">(Linux) 
+        <span class="ph cmd">Alternatively, browse to <span class="ph filepath">/opt/alfresco/</span> and run
+            <span class="ph filepath">./alfresco.sh start</span> as an administrator.</span>
+        <p class="info"> 
+          </p><div class="note important"><span class="importanttitle">Important:</span> If you installed Alfresco using the setup wizard, the
+              <span class="ph filepath">alfresco.sh</span> script included in the installation disables the
+            Security-Enhanced Linux (SELinux) feature across the system.</div>
+
+          <div class="note note"><span class="notetitle">Note:</span> The default shell for this script is <span class="ph filepath">sh</span>. You can edit the
+              <span class="ph filepath">alfresco.sh</span> file to change to your preferred shell. For example,
+            change the <samp class="ph codeph">#!/bin/sh</samp> line to <samp class="ph codeph">#!/bin/bash</samp>. </div>
+
+        
+      </li>
+</ul></div>
+
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../concepts/start-stop-intro.html" title="This section describes how to run the Alfresco server and Share.">Starting and stopping Alfresco</a></div>
+</div>
+</div>
+
+</div></div></div><div class="field field-name-field-show-feedback field-type-list-boolean field-label-hidden"><div class="field-items"><div class="field-item even"></div></div></div>
+
+  <div id="book-navigation-577538" class="book-navigation">
+
+  
+    <table id='nav-table-small'>
+      <tr>
+        
+                
+        
+          <td width="50%">
+            <button id="next" onclick="window.location.href='http://docs.alfresco.com/5.0/tasks/alfresco-stop.html'" title="Go to next page">Next ›</button>
+          </td>
+
+              <tr>
+    </table>
+      
+  
+  
+  </div>
+  </div>
+
+  <ul class="links list-inline"><li class="book_printer first last"><a href="/print/book/export/html/578041" title="Display a printer-friendly version of this page." class="print-page" rel="nofollow">Display a printer-friendly version of this page</a></li>
+</ul>
+  
+</div>
+
+    <!-- poll daddy -->
+    <div id="pd_rating_holder_6386479">
+    <script type="text/javascript" xml:space="preserve">
+    if (document.URL.indexOf('?') == -1) {
+        topic_url = document.location.toString();
+        
+    } else {
+        topic_url = document.URL.substring(0, document.URL.indexOf('?'));
+    }
+    if (topic_url.indexOf("docs.localhost") != -1){
+      topic_url = topic_url.replace('docs.localhost','docs.alfresco.com');
+    }
+    if (topic_url.indexOf("alfrescodocs.local") != -1){
+      topic_url = topic_url.replace('alfrescodocs.local','docs.alfresco.com');
+    }
+    PDRTJS_settings_6386479 = {
+        "id" : "6386479",
+        "unique_id" : topic_url,
+        "title" : document.title,
+        "popup" : "off",
+        "permalink" : topic_url
+    };
+    </script>
+    <script src="http://i.polldaddy.com/ratings/rating.js" type="text/javascript" xml:space="preserve"><!-- --></script>
+    </div>
+    <div id="wufoo-z7x3p9" class="wufoo-frame">
+       <p>
+          <b>Sending feedback to the Alfresco documentation team</b>
+       </p>
+       <p>
+          You don't appear to have JavaScript enabled in your browser. With
+          JavaScript enabled, you can provide feedback to us using our simple form.
+          Here are some <a  href="http://www.enable-javascript.com/"  target="_blank">instructions</a>
+         on how to enable JavaScript in your web browser.
+       </p>
+    </div>
+
+    <!--Convert any DITA imported object-based Youtube videos to mobile friendly iframes-->
+    <script type="text/javascript">
+      jQuery(document).ready(function() {
+        jQuery("object").each(function() {
+          resource_location = jQuery(this).attr("data")
+
+          if (resource_location.indexOf("youtube.com") > -1) {
+            resource_location = resource_location.replace("youtube.com/v/", "youtube.com/embed/")
+            jQuery(this).replaceWith(function(){
+              return jQuery("<iframe />", {
+                frameborder: 0,
+                allowfullscreen: "",
+                src: resource_location
+              })
+            });
+          }
+        })
+      })
+    </script>
+
+</section> <!-- /.block -->
+  </div>
+
+    </section>
+
+        <footer class="col-sm-8 col-md-9 book-content" style="padding:20px">
+      <hr />
+      <p class="copyright">&copy; 2015 Alfresco Software, Inc. All Rights Reserved.  &nbsp;&nbsp;<a href="http://www.alfresco.com/terms-use">Legal</a> | <a href="http://www.alfresco.com/privacy">Privacy</a> | <a href="http://www.alfresco.com">alfresco.com</a>
+      
+
+
+      <span id = "twitter-icon">
+
+        <a href="http://twitter.com/alfrescodocs" class="twitter-follow-button" data-show-count="false">Follow @twitter</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script> 
+
+      </span>
+
+      </p>
+
+       
+
+    </div>
+
+  </div>
+</div>  <script src="http://wac.996C.edgecastcdn.net/80996C/docsalfrescocom/sites/docs.alfresco.com/themes/contrib/bootstrap/js/bootstrap.js?nq6kuf"></script>
+</div>
+</body>
+</html>

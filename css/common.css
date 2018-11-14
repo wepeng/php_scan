@@ -1,0 +1,199 @@
+@charset "utf-8";
+/* CSS Document */
+
+.fixbox{
+	right:30px;
+	top:100px;
+	position:fixed !important;
+	position:absolute;
+	border:1px #999 solid;
+	padding:10px;
+	background:#F4F8FB;
+}
+.fixbox a:hover{
+	color:#F00;}
+
+body{
+	background:#E4EAED;
+	font-size: 14px;
+	font-family: "微软雅黑","Microsoft Yahei",arial;
+	color:#353535;}
+*{
+	margin:0;
+	padding:0;}
+a{
+	text-decoration:none;}	
+#top{
+	height:50px;
+	background:#193E5C;}	
+#top #menubar{
+	width:1000px;
+	margin:0 auto;
+	}
+#logo{
+	float:left; 
+	margin-top:5px;}	
+#menubar ul a{
+	color: #A3B2BE;}	
+#menubar ul a:hover{
+	color:#FFF;
+	}	
+#menubar ul{
+	list-style:none;
+	float:left;
+	margin-left:50px;
+	}
+#menubar ul li{
+	float:left;
+	list-style:none;
+	margin-right:20px;
+	height: 51px;
+	font-size: 18px;
+	line-height: 50px;
+	}
+#menubar ul li:hover{
+	background:url(../../images/header_hover_bg.png) bottom center no-repeat;}
+#menubar .nowpage{
+	background:url(../../images/header_hover_bg.png) bottom center no-repeat;}
+#menubar .nowpage a{
+	color:#FFF;
+	}			
+#menubar #exit{
+	font-size:14px;
+	float:right;
+	margin:13px 10px 0 0;
+	color:#0FF;
+	}
+#menubar #exit img{
+	margin-right:10px;
+	vertical-align:bottom;
+	padding-bottom:1px;
+	}		
+#menubar #exit a{
+	color:#A3B2BE;
+	margin-left:10px;}
+#menubar #exit a:hover{
+	color:#FFF;}				
+	
+#content{
+	background:#FFF;
+	margin-top:10px;
+	width:1000px;
+	margin-left:auto;
+	margin-right:auto;
+	padding:30px 20px;
+	border:1px  solid #BFCEF2;
+	min-height:400px;
+	}
+#footer{
+	text-align:center;
+	margin-top:30px;
+	margin-bottom:20px;
+	font-size:12px;
+	color:#555;}
+#footer a{
+	color:#555;}
+#footer a:hover{
+	text-decoration:underline;
+	}			
+
+.exam_info{
+	border:1px solid #DCE2FA;
+	margin-bottom:20px;
+	padding:20px;}
+.exam_info h3{
+	padding:0 0 10px 0;
+	border-bottom:#DEB974 dashed 1px;
+	margin-bottom:10px;}	
+.exam_introduce{
+	margin-left:70px;
+	margin-bottom:10px;
+	text-indent: 2em;}
+	
+.title{
+	line-height:50px;
+	color:#2F839E;
+	font-size:18px;
+	font-weight:bolder;
+	border-bottom:#634702 dotted 1px;}
+
+.rect{
+	width:10px;	
+	height:10px;
+	display:inline-block;
+	background-color:#F93;
+	margin-right:5px;
+	border-bottom:#666 1px solid;
+	border-right:#666 1px solid;}
+
+.blue_btn{
+	width:100px;
+	height:25px;
+	border:none;
+	color:#FFF;
+	margin-top:10px;
+	font-weight:bolder;
+	text-align:center;
+	font-size:14px;
+	background:url(../../images/btn_bg.png) left -325px no-repeat;}
+.blue_btn:hover{
+	text-decoration:underline;
+	cursor:pointer;}	
+.orange_btn{
+	width:100px;
+	height:25px;
+	border:none;
+	color:#FFF;
+	margin-top:10px;
+	text-align:center;
+	font-weight:bolder;
+	font-size:14px;
+	background:url(../../images/btn_bg.png) left -300px no-repeat;}	
+.orange_btn:hover{
+	text-decoration:underline;
+	cursor:pointer;}
+.white_btn{
+	width:100px;
+	height:25px;
+	border:none;
+	color:#F30;
+	margin-top:10px;
+	text-align:center;
+	font-weight:bolder;
+	font-size:14px;
+	background:url(../../images/btn_bg.png) left -350px no-repeat;}
+.white_btn:hover{
+	text-decoration:underline;
+	cursor:pointer;}
+
+.itable{
+	margin:0 auto;
+	width:80%;
+	text-align:center;
+	border-collapse:collapse;}
+.itable caption{
+	padding:5px 5px;
+	font-weight:bold;
+	}
+.itable th{
+	padding:5px 5px;
+	border:#333 solid 1px;}
+.itable td{
+	padding:5px 5px;
+	border:#333 solid 1px;}	
+.itable thead{
+	line-height:25px;
+	background-color:#193E5C;
+	font-size:16px;
+	color:#fff;
+	}
+.ieven{
+	background-color:#fff;}
+.iodd{
+	background-color:#F0F9FD;}	
+	
+.ibutton{
+	padding:2px 10px;
+	cursor:pointer;
+	margin:5px 0;
+	}	

@@ -1,0 +1,75 @@
+﻿<?php
+	 
+	if(isset($_GET['point_id']))
+	{
+		$id = $_GET['point_id'];
+		$sql = "update `points` set `position`=-1 where `id`='$id'";
+		mysql_query($sql);
+		//echo $_SERVER['HTTP_REFERER'];exit;
+		header("Location:".$_SERVER['HTTP_REFERER']);
+	} else if(isset($_POST['function_ids']) && isset($_POST['function_id']))
+	{
+		//更新所对应的函数
+		$function_id = $_POST['function_id'];
+		$sql = "select * from `functions` where `id`='$function_id'";
+		$result = mysql_query($sql);
+		$res = mysql_fetch_assoc($result);
+		$function_paths = unserialize($res['paths']);
+		//print_r($function_paths);
+		$temp = Array();
+		$temp['path'] = $_POST['function_ids'];
+		
+		//判断最后一点是否为结束点
+		$end_point_id = end($temp['path']);
+		$sql = "select * from `points` where `id` ='$end_point_id'";
+		$result = mysql_query($sql);
+		$res = mysql_fetch_assoc($result);
+		if($res['position']==-1)
+		{
+			$temp['end'] = true;
+		} else {
+			$temp['end'] = false;
+		}
+		//插入数据库
+		$temp = Array($temp);
+		if(!empty($function_paths))
+		{
+			$function_paths = array_merge($function_paths, $temp);
+		} else {
+			$function_paths = $temp;
+		}
+		$function_paths = array_unique($function_paths);
+		$function_paths = addslashes(serialize($function_paths));
+		$sql = "update `functions` set `paths`='$function_paths' where `id`='$function_id'";
+		mysql_query($sql);
+		$refer = $_SERVER['HTTP_REFERER'];
+		echo "<a href='$refer'>返回文件</a>";
+	} else if(isset($_POST['function_id']) && isset($_POST['function_points']))
+	{
+		//列出函数，选择经过的行
+		$id = $_POST['function_id'];
+		echo '<form action="" method="post" ><input name="function_id" type="hidden" value="'.$id.'"><input type="submit" value="提交"><table class="itable"><caption>'.$id.'</caption>
+				<tr><th>选择</th><th>所在行</th><th>设为结束点</th><th>内容</th><th>备注</th></tr>';
+		$points = str_replace('#', ',', $_POST['function_points']);
+		
+		$sql = "select * from `points` where id in($points) order by find_in_set(id,'$points')";
+		$result = mysql_query($sql);
+		while($res= mysql_fetch_assoc($result))
+		{
+			$line_number = $res['line_number'];
+			$content = $res['content'];
+			$remark = $res['remark'];
+			
+			$id = $res['id'];
+			echo "<tr><th><input name='function_ids[]' type='checkbox' value='$id' /></th><th>$line_number</th>
+					<th><a href='$url_this&point_id=$id'>结束点</a></th><td style='text-align:left'><pre>$content</pre></th><th>$remark</th></tr>";
+		}
+		echo '</table></form>';
+		echo '<a>结束点是指整个流程的结束，不是指函数的结束！</a>';
+	} else {
+		echo get_files_functions_by_file_id($_GET['files_id']);
+		$refer = $_SERVER['HTTP_REFERER'];
+		echo "<a href='$refer'>返回文件</a>";
+	}
+	
+?>
